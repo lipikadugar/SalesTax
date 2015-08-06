@@ -35,9 +35,16 @@ public class ComputeSalesTaxTest {
     }
 
     @Test
-    public void shouldGiveTheTaxForUnImportedAndUnExemptedItem() {
+    public void shouldGiveTheTaxForUnImportedAndUnExemptedItemAs1Rupees8Paisa() {
         ComputeSalesTax compute = new ComputeSalesTax(18);
 
         assertEquals(1.8 , compute.taxForUnImportedAndUnExemptedItem(), 0);
+    }
+
+    @Test
+    public void shouldGiveTaxForUnImportedAndUnExemptedItemAs() {
+        ComputeSalesTax compute = new ComputeSalesTax(72);
+
+        assertEquals(7.2, compute.taxForUnImportedAndUnExemptedItem(), 0);
     }
 }
