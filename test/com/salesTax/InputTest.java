@@ -26,4 +26,11 @@ public class InputTest {
 
         assertEquals(true, item.isImported());
     }
+
+    @Test
+    public void shouldBeAbleToGiveThePriceOfTheProduct() {
+        Input item = new Input("1 imported bottle of perfume at 27.99");
+
+        assertEquals(27.99, item.getPrice(), 0);
+    }
 }

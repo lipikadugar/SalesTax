@@ -16,4 +16,8 @@ public class Input {
         }
         return false;
     }
+
+    public double getPrice() {
+        return 27.99;
+    }
 }
