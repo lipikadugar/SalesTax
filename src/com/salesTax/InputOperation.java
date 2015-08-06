@@ -1,11 +1,9 @@
 package com.salesTax;
 
 public class InputOperation {
-    private String input;
     private String splitInput[];
 
     public InputOperation(String input) {
-        this.input = input;
         splitInput = input.split(" ");
     }
 
@@ -21,7 +19,11 @@ public class InputOperation {
         return Double.parseDouble(splitInput[splitInput.length - 1]);
     }
 
-    public String getType() {
-        return "Exempted";
+    public boolean isExempted() {
+        for (String itemType : splitInput) {
+            if (itemType.equals("chocolate"))
+                return true;
+        }
+        return false;
     }
 }

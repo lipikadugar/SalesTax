@@ -42,10 +42,16 @@ public class InputOperationTest {
     }
 
     @Test
-    public void shouldGiveTheTypeAsExemptedItemIfTheProductIsChocolate() {
+    public void shouldGiveTrueIfTheProductIsExempted() {
         InputOperation input = new InputOperation("1 box of chocolate at 11.25");
 
-        assertEquals("Exempted", input.getType());
+        assertEquals(true, input.isExempted());
+    }
 
+    @Test
+    public void shouldGiveFalseIfTheProductIsExempted() {
+        InputOperation input = new InputOperation("1 book at 12.49");
+
+        assertEquals(false, input.isExempted());
     }
 }
