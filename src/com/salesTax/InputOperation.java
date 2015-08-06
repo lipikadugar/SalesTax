@@ -1,10 +1,10 @@
 package com.salesTax;
 
-public class Input {
+public class InputOperation {
     private String input;
     private String splitInput[];
 
-    public Input(String input) {
+    public InputOperation(String input) {
         this.input = input;
         splitInput = input.split(" ");
     }
@@ -19,5 +19,9 @@ public class Input {
 
     public double getPrice() {
         return Double.parseDouble(splitInput[splitInput.length - 1]);
+    }
+
+    public String getType() {
+        return "Exempted";
     }
 }

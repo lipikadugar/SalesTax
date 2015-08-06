@@ -4,40 +4,48 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class InputTest {
+public class InputOperationTest {
 
     @Test
     public void shouldBeAbleToIdentifyTheImportedProducts() {
-        Input item = new Input("1 imported bottle of perfume at 27.99");
+        InputOperation item = new InputOperation("1 imported bottle of perfume at 27.99");
 
         assertEquals(true, item.isImported());
     }
 
     @Test
     public void shouldReturnFalseIfTheProductIsNotImported() {
-        Input item = new Input("1 book at 12.49");
+        InputOperation item = new InputOperation("1 book at 12.49");
 
         assertEquals(false, item.isImported());
     }
 
     @Test
     public void shouldReturnTrueIfImportedIsMentionedAtAnyPlaceInTheGivenString() {
-        Input item = new Input("1 box of imported chocolates at 11.25");
+        InputOperation item = new InputOperation("1 box of imported chocolates at 11.25");
 
         assertEquals(true, item.isImported());
     }
 
     @Test
     public void shouldBeAbleToGiveThePriceOfTheProduct() {
-        Input item = new Input("1 imported bottle of perfume at 27.99");
+        InputOperation item = new InputOperation("1 imported bottle of perfume at 27.99");
 
         assertEquals(27.99, item.getPrice(), 0);
     }
 
     @Test
     public void shouldReturn12Rupees49PaisaIfTheInputIs1BookAt12Rupees49Paisa() {
-        Input item = new Input("1 book at 12.49");
+        InputOperation item = new InputOperation("1 book at 12.49");
 
         assertEquals(12.49, item.getPrice(), 0);
+    }
+
+    @Test
+    public void shouldGiveTheTypeAsExemptedItemIfTheProductIsChocolate() {
+        InputOperation input = new InputOperation("1 box of chocolate at 11.25");
+
+        assertEquals("Exempted", input.getType());
+
     }
 }
