@@ -19,4 +19,11 @@ public class InputTest {
 
         assertEquals(false, item.isImported());
     }
+
+    @Test
+    public void shouldReturnTrueIfImportedIsMentionedAtAnyPlaceInTheGivenString() {
+        Input item = new Input("1 box of imported chocolates at 11.25");
+
+        assertEquals(true, item.isImported());
+    }
 }
