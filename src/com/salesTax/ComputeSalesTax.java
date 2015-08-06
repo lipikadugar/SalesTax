@@ -7,13 +7,12 @@ public class ComputeSalesTax {
         this.price = price;
     }
 
-    public double taxForImportedProducts() {
+    public double taxForImportedProductsAndExemptedProducts() {
         return price * 5 / 100;
     }
 
     public double taxForImportedAndUnExemptedProducts() {
-        double importTax = taxForImportedProducts();
-        return importTax + price * 10 / 100;
+        return taxForImportedProductsAndExemptedProducts() + taxForUnImportedAndUnExemptedItem();
     }
 
     public double taxForUnImportedAndUnExemptedItem() {
