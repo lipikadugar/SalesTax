@@ -1,7 +1,8 @@
 package com.salesTax;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class InputTest {
 
@@ -9,6 +10,13 @@ public class InputTest {
     public void shouldBeAbleToIdentifyTheImportedProducts() {
         Input item = new Input("1 imported bottle of perfume at 27.99");
 
-        Assert.assertEquals(true, item.isImported());
+        assertEquals(true, item.isImported());
+    }
+
+    @Test
+    public void shouldReturnFalseIfTheProductIsNotImported() {
+        Input item = new Input("1 book at 12.49");
+
+        assertEquals(false, item.isImported());
     }
 }
