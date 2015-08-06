@@ -15,4 +15,8 @@ public class ComputeSalesTax {
         double importTax = taxForImportedProducts();
         return importTax + price * 10 / 100;
     }
+
+    public double taxForUnImportedAndUnExemptedItem() {
+        return 1.8;
+    }
 }

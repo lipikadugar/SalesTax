@@ -33,4 +33,11 @@ public class ComputeSalesTaxTest {
 
         assertEquals(4.35, compute.taxForImportedAndUnExemptedProducts(), 0);
     }
+
+    @Test
+    public void shouldGiveTheTaxForUnImportedAndUnExemptedItem() {
+        ComputeSalesTax compute = new ComputeSalesTax(18);
+
+        assertEquals(1.8 , compute.taxForUnImportedAndUnExemptedItem(), 0);
+    }
 }
