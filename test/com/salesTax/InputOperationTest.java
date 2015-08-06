@@ -49,9 +49,16 @@ public class InputOperationTest {
     }
 
     @Test
-    public void shouldGiveFalseIfTheProductIsExempted() {
-        InputOperation input = new InputOperation("1 book at 12.49");
+    public void shouldGiveFalseIfTheProductIsNotExempted() {
+        InputOperation input = new InputOperation("1 perfume at 12.49");
 
         assertEquals(false, input.isExempted());
+    }
+
+    @Test
+    public void shouldGiveExemptedIfTheProductIsBook() {
+        InputOperation input = new InputOperation("1 book at 13.56");
+
+        assertEquals(true, input.isExempted());
     }
 }

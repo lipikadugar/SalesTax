@@ -21,7 +21,7 @@ public class InputOperation {
 
     public boolean isExempted() {
         for (String itemType : splitInput) {
-            if (itemType.equals("chocolate"))
+            if (itemType.equals("chocolate") || itemType.equals("book"))
                 return true;
         }
         return false;
