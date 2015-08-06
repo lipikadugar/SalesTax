@@ -8,6 +8,6 @@ public class ComputeSalesTax {
     }
 
     public double taxForImportedProducts() {
-        return 10.50;
+        return price * 5 / 100;
     }
 }
