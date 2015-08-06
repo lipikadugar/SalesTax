@@ -19,4 +19,11 @@ public class ComputeSalesTaxTest {
 
         assertEquals(1.00, compute.taxForImportedProducts(), 0);
     }
+
+    @Test
+    public void shouldGiveTaxForImportedAndUnExemptedItem() {
+        ComputeSalesTax compute = new ComputeSalesTax(50.00);
+
+        assertEquals(7.5, compute.taxForImportedAndUnExemptedProducts(), 0);
+    }
 }
