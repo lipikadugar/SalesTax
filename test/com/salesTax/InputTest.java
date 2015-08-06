@@ -33,4 +33,11 @@ public class InputTest {
 
         assertEquals(27.99, item.getPrice(), 0);
     }
+
+    @Test
+    public void shouldReturn12Rupees49PaisaIfTheInputIs1BookAt12Rupees49Paisa() {
+        Input item = new Input("1 book at 12.49");
+
+        assertEquals(12.49, item.getPrice(), 0);
+    }
 }

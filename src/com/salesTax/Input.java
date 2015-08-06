@@ -18,6 +18,6 @@ public class Input {
     }
 
     public double getPrice() {
-        return 27.99;
+        return Double.parseDouble(splitInput[splitInput.length - 1]);
     }
 }
